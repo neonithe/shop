@@ -13,7 +13,8 @@
           <p class="card-text">{{ product.description }}</p>
         </div>
         <div class="px-4 pb-3">
-          <button class="btn btn-outline-success">Add to cart</button>
+          <button class="btn btn-outline-success"
+          @click="addToCart">Add to cart</button>
         </div>
       </div>
     </div>

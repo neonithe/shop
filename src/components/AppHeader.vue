@@ -4,7 +4,8 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <div class="container">
       <div class="nav nabar-nav">
-        <router-link to="/" class="nav-item nav-link active">Home</router-link>
+        <router-link to="/" class="btn btn-outline-info btn-sm">Home</router-link>
+        <router-link to="/checkout" class="btn btn-outline-info btn-sm">Checkout</router-link>
       </div>
     <div>
       <div class="dropdown open">
@@ -15,7 +16,7 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-        >0 Cart</button>
+        >{{ cartItemCount }} items | {{cartTotalPrice}} sek</button>
         <div @click="$event.stopPropagation()">
           <MiniCart/>
         </div>
@@ -32,6 +33,14 @@
   export default {
     components: {
       MiniCart
+    },
+    computed: {
+      cartItemCount() {
+        return this.$store.getters.cartItemCout;
+      },
+      cartTotalPrice() {
+        return this.$store.getters.cartTotalPrice;
+      }
     }
   };
 </script>
