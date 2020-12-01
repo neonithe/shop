@@ -21,6 +21,9 @@ export const ADD_TO_CART = (state, { product, quantity }) => {
        product,
        quantity
     });
+
+    localStorage.setItem('cart', JSON.stringify(state.cart));
+    localStorage.setItem('cartCount', state.cartCount);
 }
 
 export const REMOVE_PRODUCT_FROM_CART = (state, product) => {

@@ -3,10 +3,12 @@ import VueRouter from "vue-router";
 import App from './App.vue';
 import routes from "./routes";
 import store from './store';
+import VueCookies from 'vue-cookies';
 
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+Vue.use(VueCookies);
 Vue.use(VueRouter);
 Vue.config.productionTip = false
 
